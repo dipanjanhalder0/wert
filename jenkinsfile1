@@ -1,17 +1,16 @@
 pipeline {
-agent any
-triggers {
-        pollscm(*/2 * * * *)
-stages { 
-stage('checkout') {
-steps {
-checkout scm
-}
-}
-stage('build') {
-steps {
-sh 'mvn install'
-}
-}
-}
+		agent any
+
+		stages {
+		    stage('Checkout') {
+		        steps {
+					checkout scm	
+		        }
+		    }
+			stage('Build') {
+		        steps {
+					sh 'mvn install'
+		        }
+			}
+		}
 }
