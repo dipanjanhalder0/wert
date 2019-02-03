@@ -7,7 +7,6 @@ steps{
 checkout scm
 }
 }
-stage{
 stage(build){
 steps{
 sh "mvn install"
@@ -16,5 +15,5 @@ sh "mvn install"
 }
 }
 }
-}
+
 
